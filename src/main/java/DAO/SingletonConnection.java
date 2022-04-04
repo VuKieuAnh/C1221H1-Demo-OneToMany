@@ -11,7 +11,6 @@ public class SingletonConnection {
     public static Connection connection;
 
     public static Connection getConnection(){
-        if (connection == null){
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 connection = DriverManager.getConnection(
@@ -25,7 +24,6 @@ public class SingletonConnection {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }
         return connection;
     }
 }
